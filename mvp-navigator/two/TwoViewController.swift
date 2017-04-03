@@ -10,6 +10,8 @@ class TwoViewController: BasePresenterController<TwoPresenter, TwoNavigator>, Tw
 
     typealias V = TwoView
 
+    @IBOutlet weak var tableView: UITableView!
+    
     convenience init() {
         self.init(nibName: "TwoViewController", bundle: nil)
 

@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appConfiguration = AppConfiguration(application)
         interactorManager = InteractorManager(appConfiguration: appConfiguration)
 
+        setRootController()
+
         return true
     }
 
@@ -33,6 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     }
 
+    func setRootController() {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let controller = storyboard.instantiateViewController(withIdentifier: "NavigationController")
+        let controller = MainViewController()
+        self.window?.rootViewController = controller
+    }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.

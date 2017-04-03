@@ -10,6 +10,10 @@ class OneViewController: BasePresenterController<OnePresenter, OneNavigator>, On
 
     typealias V = OneView
 
+    @IBOutlet weak var twoButton: UIButton!
+    @IBOutlet weak var threeButton: UIButton!
+    @IBOutlet weak var modalButton: UIButton!
+    
     convenience init() {
         self.init(nibName: "OneViewController", bundle: nil)
 
