@@ -6,19 +6,17 @@
 import Foundation
 import UIKit
 
-class MainNavigator: BaseNavigator {
+class MainNavigator: BaseIBNavigator {
+
 
     typealias C = MainViewController
 
-    var controller: MainViewController
-
-    required init(controller: MainViewController) {
-        self.controller = controller
+    required init(controller: UIViewController) {
+        super.init(controller: controller)
     }
 
     func openOneController() {
-        let controller = OneViewController()
-        UIApplication.shared.keyWindow?.rootViewController = controller
+        self.openController(viewController: OneViewController())
     }
 
 }

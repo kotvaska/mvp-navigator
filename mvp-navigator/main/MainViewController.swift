@@ -6,38 +6,19 @@
 import Foundation
 import UIKit
 
-class MainViewController: BaseController, MainView {
+class MainViewController: BasePresenterIBController, MainView {
 
     typealias V = MainView
 
-    private var presenter: MainPresenter
-    private var navigator: MainNavigator
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+    // MARK - if needed
 
     override func loadView() {
         super.loadView()
 
-        navigator = MainNavigator(controller: self)
-        presenter = MainPresenter(view: self, navigator: navigator)
-
+        setView(baseView: self)
+        setNavigator(navigator: MainNavigator(controller: self))
+        setPresenter(presenter: MainPresenter(view: self, navigator: navigator as! MainNavigator))
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        presenter.viewDidLoad()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        presenter.viewDidAppear()
-    }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        presenter.viewDidDisappear()
-    }
 
 }

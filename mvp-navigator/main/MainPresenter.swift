@@ -5,27 +5,24 @@
 
 import Foundation
 
-class MainPresenter: BasePresenter {
+class MainPresenter: BaseIBPresenter {
+
 
     typealias V = MainView
     typealias N = MainNavigator
 
-    var view: MainView
-    var navigator: MainNavigator
-
-    required init(view: MainView, navigator: MainNavigator) {
-        self.view = view
-        self.navigator = navigator
+    required init(view: BaseView, navigator: BaseIBNavigator) {
+        super.init(view: view, navigator: navigator)
     }
 
-    func viewDidLoad() {
-        navigator.openOneController()
+    override func viewDidLoad() {
     }
 
-    func viewDidAppear() {
+    override func viewDidAppear() {
+        (navigator as! MainNavigator).openOneController()
     }
 
-    func viewDidDisappear() {
+    override func viewDidDisappear() {
     }
 
 }
