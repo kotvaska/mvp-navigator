@@ -32,8 +32,7 @@ class ModalPresenter: BasePresenter {
     }
 
     func returnHome() {
-        navigator.close()
-        navigator.goToRootNavigation()
+        navigator.returnHome()
     }
 
 }

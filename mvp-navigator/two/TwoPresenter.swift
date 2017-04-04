@@ -28,7 +28,7 @@ class TwoPresenter: BasePresenter {
     }
 
     func returnHome() {
-        navigator.goToRootNavigation()
+        navigator.openRoot()
     }
 
 

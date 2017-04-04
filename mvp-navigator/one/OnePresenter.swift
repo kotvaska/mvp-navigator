@@ -28,15 +28,15 @@ class OnePresenter: BasePresenter {
     }
 
     func onThreeClick() {
-        navigator.present(viewController: TwoViewController())
+        navigator.openTwoViewControllerAsMain()
     }
 
     func onModalClick() {
-        navigator.presentModal(viewController: ModalViewController(), style: .popover)
+        navigator.openModalViewControllerAsModal()
     }
 
     func onTwoClick() {
-        navigator.openController(viewController: TwoViewController())
+        navigator.openTwoViewControllerAsChild()
     }
 
 }

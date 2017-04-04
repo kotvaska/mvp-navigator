@@ -52,10 +52,12 @@ extension BaseNavigator {
         }
     }
 
-    func goToRootNavigation() {
+    func goToRootNavigation() -> Bool {
         if let navigationController = controller.navigationController {
             navigationController.popToRootViewController(animated: true)
+            return true
         }
+        return false
     }
 
     func popNavigation() -> Bool {

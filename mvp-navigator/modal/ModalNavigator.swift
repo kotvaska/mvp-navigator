@@ -16,5 +16,10 @@ class ModalNavigator: BaseNavigator {
         self.controller = controller
     }
 
+    func returnHome() {
+        close()
+        goToRootNavigation()
+    }
+
 
 }

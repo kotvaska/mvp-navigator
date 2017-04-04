@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import UIKit
 
 class TwoNavigator: BaseNavigator {
 
@@ -13,6 +14,14 @@ class TwoNavigator: BaseNavigator {
 
     required init(controller: TwoViewController) {
         self.controller = controller
+    }
+
+    func openRoot() {
+        if !goToRootNavigation() {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "NavigationController")
+            setRoot(viewController: controller)
+        }
     }
 
 }

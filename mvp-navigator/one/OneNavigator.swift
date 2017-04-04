@@ -16,4 +16,16 @@ class OneNavigator: BaseNavigator {
         self.controller = controller
     }
 
+    func openTwoViewControllerAsMain() {
+        present(viewController: TwoViewController())
+    }
+
+    func openModalViewControllerAsModal() {
+        presentModal(viewController: ModalViewController(), style: .popover)
+    }
+
+    func openTwoViewControllerAsChild() {
+        openController(viewController: TwoViewController())
+    }
+
 }
