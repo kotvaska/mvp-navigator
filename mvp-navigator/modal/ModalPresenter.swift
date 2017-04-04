@@ -27,4 +27,13 @@ class ModalPresenter: BasePresenter {
     func viewDidDisappear() {
     }
 
+    func close() {
+        navigator.close()
+    }
+
+    func returnHome() {
+        navigator.close()
+        navigator.goToRootNavigation()
+    }
+
 }

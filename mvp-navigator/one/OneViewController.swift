@@ -28,5 +28,16 @@ class OneViewController: BasePresenterController<OnePresenter, OneNavigator>, On
         super.loadView()
     }
 
-
+    @IBAction func onTwoClick(_ sender: Any) {
+        presenter.onTwoClick()
+    }
+    
+    @IBAction func onModalClick(_ sender: Any) {
+        presenter.onModalClick()
+    }
+    
+    @IBAction func onThreeClick(_ sender: Any) {
+        presenter.onThreeClick()
+    }
+    
 }

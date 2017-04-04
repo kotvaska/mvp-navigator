@@ -19,12 +19,12 @@ protocol BaseNavigator {
 extension BaseNavigator {
 
     func openController(viewController: UIViewController) {
-        if !pushNavigationViewController(viewController: viewController) {
-            presentController(viewController: viewController)
+        if !pushNavigation(viewController: viewController) {
+            present(viewController: viewController)
         }
     }
 
-    func pushNavigationViewController(viewController: UIViewController) -> Bool {
+    func pushNavigation(viewController: UIViewController) -> Bool {
         if let navigationController = controller.navigationController {
             navigationController.pushViewController(viewController, animated: true)
             return true
@@ -32,12 +32,42 @@ extension BaseNavigator {
         return false
     }
 
-    func presentController(viewController: UIViewController) {
+    func present(viewController: UIViewController) {
         controller.present(viewController, animated: true)
     }
 
-    func setRootViewController(viewController: UIViewController) {
+    func setRoot(viewController: UIViewController) {
         UIApplication.shared.keyWindow?.rootViewController = viewController
+    }
+
+    func presentModal(viewController: UIViewController, style: UIModalPresentationStyle) {
+        viewController.modalPresentationStyle = style
+        present(viewController: viewController)
+
+    }
+
+    func close() {
+        if !popNavigation() {
+            dismiss()
+        }
+    }
+
+    func goToRootNavigation() {
+        if let navigationController = controller.navigationController {
+            navigationController.popToRootViewController(animated: true)
+        }
+    }
+
+    func popNavigation() -> Bool {
+        if let navigationController = controller.navigationController {
+            navigationController.popToRootViewController(animated: true)
+            return true
+        }
+        return false
+    }
+
+    func dismiss() {
+        controller.dismiss(animated: true)
     }
 
 }

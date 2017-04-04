@@ -27,5 +27,9 @@ class TwoPresenter: BasePresenter {
     func viewDidDisappear() {
     }
 
+    func returnHome() {
+        navigator.goToRootNavigation()
+    }
+
 
 }

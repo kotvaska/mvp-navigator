@@ -26,4 +26,8 @@ class TwoViewController: BasePresenterController<TwoPresenter, TwoNavigator>, Tw
         super.loadView()
     }
 
+    @IBAction func onMainClick(_ sender: Any) {
+        presenter.returnHome()
+    }
+    
 }

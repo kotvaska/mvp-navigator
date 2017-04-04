@@ -24,4 +24,12 @@ class ModalViewController: BasePresenterController<ModalPresenter, ModalNavigato
         super.loadView()
     }
 
+    @IBAction func onCloseClick(_ sender: Any) {
+        presenter.close()
+    }
+
+    @IBAction func onMainClick(_ sender: Any) {
+        presenter.returnHome()
+    }
+    
 }

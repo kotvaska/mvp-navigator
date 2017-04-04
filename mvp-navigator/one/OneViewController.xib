@@ -26,16 +26,25 @@
                     <rect key="frame" x="125" y="81" width="125" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Go to two"/>
+                    <connections>
+                        <action selector="onTwoClick:" destination="-1" eventType="touchUpInside" id="3Tk-U6-a0Z"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gY6-ud-MDA">
                     <rect key="frame" x="125" y="167" width="125" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Go to modal"/>
+                    <connections>
+                        <action selector="onModalClick:" destination="-1" eventType="touchUpInside" id="9nq-fY-IOs"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rd-qE-5VM">
                     <rect key="frame" x="125" y="259" width="125" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Go to three"/>
+                    <connections>
+                        <action selector="onThreeClick:" destination="-1" eventType="touchUpInside" id="tqd-xt-94O"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -27,4 +27,16 @@ class OnePresenter: BasePresenter {
     func viewDidDisappear() {
     }
 
+    func onThreeClick() {
+        navigator.present(viewController: TwoViewController())
+    }
+
+    func onModalClick() {
+        navigator.presentModal(viewController: ModalViewController(), style: .popover)
+    }
+
+    func onTwoClick() {
+        navigator.openController(viewController: TwoViewController())
+    }
+
 }
