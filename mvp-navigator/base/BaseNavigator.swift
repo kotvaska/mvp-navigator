@@ -18,8 +18,27 @@ protocol BaseNavigator {
 
 extension BaseNavigator {
 
-    func openNavigationController() {
+    func openController(viewController: UIViewController) {
+        if !pushNavigationViewController(viewController: viewController) {
+            presentController(viewController: viewController)
+        }
+    }
 
+    func pushNavigationViewController(viewController: UIViewController) -> Bool {
+        if let navigationController = controller.navigationController {
+            navigationController.pushViewController(viewController, animated: true)
+            return true
+        }
+        return false
+    }
+
+    func presentController(viewController: UIViewController) {
+        controller.present(viewController, animated: true)
+    }
+
+    func setRootViewController(viewController: UIViewController) {
+        UIApplication.shared.keyWindow?.rootViewController = viewController
     }
 
 }
+
